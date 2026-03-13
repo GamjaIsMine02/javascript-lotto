@@ -96,3 +96,18 @@ background, background-color, background-image, background-size, background-posi
 ### 4. 타이포
 
 font, font-family, font-size, font-weight, font-style, font-variant, line-height, letter-spacing, text-align, text-decoration, text-transform, text-shadow, color, white-space, word-break, word-spacing, text-overflow
+
+## 4. 배포 링크
+
+https://gamjaismine02.github.io/javascript-lotto/
+
+### 구조
+
+- Controller: `src/Controller/WebController.js`
+- Service: `src/Service/LottoService.js`
+- View:
+  - `src/webView/PurchaseView/PurchaseView.js`
+  - `src/webView/LottoView/LottoView.js`
+  - `src/webView/UserLottoView/UserLottoView.js`
+  - `src/webView/ModalView/ModalView.js`
+- Model: `src/Model/*`
