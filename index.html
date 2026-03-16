@@ -3,14 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <title>🎱 행운의 로또</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./global.css" />
   </head>
-
   <body>
     <div id="app">
-      <h1>🎱 행운의 로또</h1>
+      <header class="header-container">
+        <div class="header-text-box">🎱 행운의 로또</div>
+      </header>
+
+      <main class="main-container">
+        <div class="card-container">
+          <div class="card-header">🎱 내 번호 당첨 확인 🎱</div>
+
+          <!-- 1. 구입 폼 -->
+          <section id="purchase-section" class="card-input-container">
+            <form id="purchase-form" class="input-container">
+              <input
+                type="number"
+                id="purchase-amount"
+                class="input-line"
+                placeholder="구입 금액"
+              />
+              <button type="submit" class="input-button">구입</button>
+            </form>
+            <p id="purchase-error" class="input-error" aria-live="polite"></p>
+          </section>
+
+          <!-- 2. 구입한 로또 렌더링 -->
+          <div id="lotto-section" class="card-hidden-section" hidden>
+            <section class="lottos-container">
+              <p id="purchase-summary" class="purchase-summary"></p>
+              <div id="ticket-container" class="lottos-table"></div>
+            </section>
+
+            <form id="winning-form" class="userLotto-container">
+              <div class="input-container">
+                <div class="winningNumber-container">
+                  <label>당첨 번호</label>
+                  <div class="winningNumber-input-container">
+                    <input class="winningNumber-line" type="number" />
+                    <input class="winningNumber-line" type="number" />
+                    <input class="winningNumber-line" type="number" />
+                    <input class="winningNumber-line" type="number" />
+                    <input class="winningNumber-line" type="number" />
+                    <input class="winningNumber-line" type="number" />
+                  </div>
+                </div>
+                <div class="bonusNumber-container">
+                  <label>보너스 번호</label>
+                  <input class="bonusNumber-line" type="number" />
+                </div>
+              </div>
+              <p id="winning-error" class="input-error" aria-live="polite"></p>
+              <button type="submit" class="result-button">결과 확인하기</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <!-- 결과 모달 -->
+      <div id="result-modal" class="result-modal-overlay" hidden>
+        <div class="modal">
+          <button type="button" class="modal-close" aria-label="닫기">×</button>
+          <h2 class="modal-header">당첨 통계</h2>
+          <div class="modal-table">
+            <div class="row-header">
+              <div class="row-item">일치 개수</div>
+              <div class="row-item">당첨 금액</div>
+              <div class="row-item">당첨 개수</div>
+            </div>
+            <div id="result-rows"></div>
+          </div>
+          <p class="benefit-messege">총 수익률은 0.0%입니다.</p>
+          <button id="restart-btn" class="modal-restart" type="button">
+            다시 시작하기
+          </button>
+        </div>
+      </div>
+
+      <footer class="footer-container">
+        <div class="footer-text-box">우아한테크코스 로또</div>
+      </footer>
     </div>
+
     <script type="module" src="./src/step2-index.js"></script>
   </body>
 </html>
